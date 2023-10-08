@@ -1,0 +1,160 @@
+body{
+    color:#fff;
+  background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
+  background-attachment:fixed;
+}
+
+
+#satelite {
+    margin-top: 250px;
+    margin-left: 200px;
+    height: 35px;
+    width: 35px;
+    background: url('/img/satelite.png') no-repeat center center;
+    background-size: cover;
+    animation: rotateSatellite 10s infinite linear, spin-right 10s linear infinite;
+  }
+  .satelite-spin {
+    animation: spin-right 15s linear infinite;
+  }
+  @keyframes spin-right {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.luna {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50%;
+    background: url(../img/luna.png);
+    background-size: cover;}
+
+.tierra {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: -27px -27px 0 -7px rgba(0, 0, 0, .15) inset,
+                -10px -10px 0 0 rgba(0, 0, 0, .1) inset,
+                0px 0px 0 0 rgba(255, 255, 255, .2) inset;
+    background: url(../img/mapa.png);
+    background-size: cover;
+    animation: tierra-girando 5s infinite linear; /* Combina ambas animaciones */}
+
+@keyframes tierra-girando {
+    0% {
+        background-position: 0 center;
+    }
+    100% {
+        background-position: -398px center;
+    }
+}
+.tierra:hover {
+    animation-play-state: paused;
+}
+
+.satelite-spin:hover {
+    animation-play-state: paused;
+}
+@keyframes moverCometa {
+    0% {
+        top: 0;
+        left: -100px;
+        transform: rotate(-45deg);
+    }
+    100% {
+        top: 100%;
+        left: 100%;
+        transform: rotate(-45deg);
+    }
+}
+
+.cometa {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: -90px;
+    background: url('/img/b.png') no-repeat center center;
+    background-size: cover;
+    animation: moverCometa 10s infinite linear;
+}
+.cometa:hover {
+    animation-play-state: paused;
+}
+
+.estrella {
+	width: 3px;
+	height: 3px;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 50%;
+	position: absolute;
+}
+
+.estrella.impar {
+	-webkit-animation: estrella-impar 2s infinite;
+}
+
+.estrella.par {
+	-webkit-animation: estrella-par 2s infinite;
+}
+
+.primera {
+	left: 20%;
+	top: 20%;
+}
+.segunda {
+	left: 40%;
+	top: 30%;
+}
+.tercera {
+	left: 70%;
+	top: 40%;
+}
+.cuarta {
+	left: 90%;
+	top: 10%;
+}
+.quinta {
+	left: 10%;
+	top: 60%;
+}
+.sexta {
+	left: 80%;
+	top: 70%;
+}
+.septima {
+	left: 50%;
+	top: 80%;
+}
+.octava {
+	left: 20%;
+	top: 80%;
+}
+
+@-webkit-keyframes estrella-impar {
+	0%, 80% {
+		box-shadow: none;
+	}
+
+	100% {
+		box-shadow: 0 0 10px 10px rgba(255,255,255,.3);
+	}
+}
+
+@-webkit-keyframes estrella-par {
+	0%, 40%, 80%{
+		box-shadow: none;
+	}
+
+	60% {
+		box-shadow: 0 0 10px 10px rgba(255,255,255,.3);
+	}
+}
